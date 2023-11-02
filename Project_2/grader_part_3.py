@@ -30,7 +30,7 @@ def check_condition(event, customer_requests):
     branch = customer_request["branches"][branch_id]
 
     # Check if logical clock is incremental within the same request and branch
-    if current_clock <= branch["last_logical_clock"]:
+    if current_clock < branch["last_logical_clock"]:
         return False
 
     branch["last_logical_clock"] = current_clock
