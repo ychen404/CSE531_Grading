@@ -1,4 +1,11 @@
 import json
+import sys
+
+if len(sys.argv) < 2:
+    print("Input argument?")
+    exit()
+
+filename = sys.argv[1]
 
 # Define a function to check if events meet the specified conditions
 def check_event_conditions(event, branch_data):
@@ -26,7 +33,7 @@ def check_event_conditions(event, branch_data):
 total_events = 0
 
 # Read the JSON data from a file
-with open('branch_events.json', 'r') as file:
+with open(filename, 'r') as file:
     json_data = file.read()
 
 # Parse the JSON data

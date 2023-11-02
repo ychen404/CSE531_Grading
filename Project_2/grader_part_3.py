@@ -1,7 +1,13 @@
 import json
+import sys
 
+if len(sys.argv) < 2:
+    print("Input argument?")
+    exit()
+
+filename = sys.argv[1]
 # Read JSON data from a file
-with open('all_events_new.json', 'r') as file:
+with open(filename, 'r') as file:
     events = json.load(file)
 
 
